@@ -18,37 +18,48 @@ export const userSlice = createSlice({
   name:'user',
   initialState,
   reducers:{},
-  usersFetching(state:any){
-    state.isLoading = true;
+
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchUsers.fulfilled, (state, action:PayloadAction<IUser[]>) => {
+        state.isLoading = false;
+        state.error = '';
+        state.users = action.payload;
+      })
+      .addCase(fetchUsers.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchUsers.rejected, (state, action:any) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      });
   },
-  usersFetchingSuccess(state:any,action:PayloadAction<IUser[]>){
-   state.isLoading = false;
-   state.error = '';
-   state.users = action.payload
-  },
-  usersFetchingError(state:any,action: PayloadAction<string>){
-   state.isLoading = false;
-   state.error = action.payload
-  },
+  })
+  export default userSlice.reducer;
 
 
-})
-
-export default userSlice.reducer;
-
-/*
-  extraReducers:{
-    [fetchUsers.fulfilled.type]:(state:any,action:PayloadAction<IUser[]>)=>{
-      state.isLoading = false;
-      state.error = '';
-      state.users = action.payload;
-  },
-  [fetchUsers.pending.type]:(state:any) => {
-    state.isLoading = true;
-  },
-  [fetchUsers.rejected.type]: (state:any, action: PayloadAction<string>)=>{
+/*extraReducers:{
+  [fetchUsers.fulfilled.type]:(state:any,action:PayloadAction<IUser[]>)=>{
     state.isLoading = false;
-    state.error = action.payload
-  }
-  }
-*/ 
+    state.error = '';
+    state.users = action.payload;
+},
+[fetchUsers.pending.type]:(state:any) => {
+  state.isLoading = true;
+},
+[fetchUsers.rejected.type]: (state:any, action: PayloadAction<string>)=>{
+  state.isLoading = false;
+  state.error = action.payload
+},}*/
+
+
+
+
+
+
+
+
+
+
+
+ 
