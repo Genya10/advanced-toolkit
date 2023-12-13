@@ -9,7 +9,7 @@ export const PostContainer = ()=>{
      const [updatePost,{}]=postAPI.useUpdatePostMutation();
      const [deletePost,{}]=postAPI.useDeletePostMutation();
 
-      const handleCreate= async()=>{
+      const handleCreate = async()=>{
         const title = prompt()
         await createPost({title,body:title} as IPost)
       }
@@ -23,14 +23,14 @@ export const PostContainer = ()=>{
     return(
         <div>
             <div className="post_list">
-                <button onClick={handleCreate}>Add post</button>
+                <button onClick={handleCreate}>Add new post</button>
                 {isLoading && <h1>Loading..</h1>}
                 {error && <h1>Error</h1>}
                 {posts && posts.map(post=>
                 <PostItem key={post.id} 
-                        remove={handleRemove}
-                        update={handleUpdate}
-                        post={post}/>)
+                          remove={handleRemove}
+                          update={handleUpdate}
+                          post={post}/>)
                     }
             </div>
         </div>

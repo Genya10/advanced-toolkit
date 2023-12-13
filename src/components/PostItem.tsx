@@ -20,7 +20,7 @@ export const PostItem:FC<PostItemProps> =({post,remove,update})=>{
 
     return(
         <div onClick={handleUpdate}>
-         {post.id},{post.title}
+          {post.id}.{post.title}
          <button onClick={handleRemove}>Delete</button>
         </div>
     )

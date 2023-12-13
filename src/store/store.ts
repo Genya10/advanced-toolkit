@@ -3,15 +3,15 @@ import userReducer from "../reducers/UserSlice";
 import { postAPI } from "../services/PostService";
 
 const rootReducer = combineReducers({
- userReducer,
- [postAPI.reducerPath]:postAPI.reducer
+    userReducer,
+    [postAPI.reducerPath]:postAPI.reducer
 })
 
 export const setupStore =()=>{
     return configureStore({
         reducer:rootReducer,
         middleware:(getDefaultMiddleware) =>
-            getDefaultMiddleware().concat(postAPI.middleware),
+        getDefaultMiddleware().concat(postAPI.middleware),
     })
 }
 
