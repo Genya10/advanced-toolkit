@@ -16,7 +16,6 @@ function App() {
   return (
 
     <div className="App">
-
       {isLoading && <h2>Loading....</h2>}      
       {error && <h2>{error}</h2>}
       {JSON.stringify(users,null,2)}

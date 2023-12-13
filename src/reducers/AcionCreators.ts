@@ -1,6 +1,6 @@
-import { userSlice } from './UserSlice';
+//import { userSlice } from './UserSlice';
 import axios from "axios";
-import { AppDispatch } from "../store/store";
+//import { AppDispatch } from "../store/store";
 import { IUser } from "../types/IUser";
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
