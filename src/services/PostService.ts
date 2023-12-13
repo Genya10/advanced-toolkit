@@ -7,7 +7,7 @@ export const postAPI = createApi({
     tagTypes:['Post'],
     endpoints:(build)=>({
         fetchAllPosts: build.query<IPost[],number>({
-            query:(limit:number=5)=>({
+            query:(limit:number=10)=>({
                 url:'/posts',
                 params:{
                     _limit:limit

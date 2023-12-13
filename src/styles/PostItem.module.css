@@ -1,0 +1,20 @@
+.postItem{
+    font-weight: 600;
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border: 0.1rem solid brown;
+    margin-bottom: 0.7rem;
+    text-transform: capitalize;
+}
+.btnDelete{
+    padding: 0.25rem 0.4rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 255, 0.845);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}

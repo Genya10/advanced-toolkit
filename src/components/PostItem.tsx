@@ -1,5 +1,6 @@
 import React,{FC} from "react";
 import { IPost } from "../types/IPost";
+import cl from "../styles/PostItem.module.css";
 
 interface PostItemProps {
     post:IPost,
@@ -19,9 +20,11 @@ export const PostItem:FC<PostItemProps> =({post,remove,update})=>{
    }
 
     return(
-        <div onClick={handleUpdate}>
+        <div className={cl.postItem}
+             onClick={handleUpdate}>
           {post.id}.{post.title}
-         <button onClick={handleRemove}>Delete</button>
+         <button className={cl.btnDelete}
+                 onClick={handleRemove}>Delete</button>
         </div>
     )
 }

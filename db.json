@@ -1,14 +1,19 @@
 {
   "posts": [
     {
-      "title": "wetqrghr",
-      "body": "wetqrghr",
+      "title": "Hello,friend",
+      "body": "Hello,friend",
       "id": 1
     },
     {
-      "title": "bebhtrh",
-      "body": "bebhtrh",
+      "title": "To buy something",
+      "body": "To buy something",
       "id": 2
+    },
+    {
+      "title": "To pay for this",
+      "body": "To pay for this",
+      "id": 3
     }
   ]
 }

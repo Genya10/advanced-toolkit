@@ -2,9 +2,10 @@ import React from "react";
 import { postAPI } from "../services/PostService";
 import { PostItem } from "./PostItem";
 import { IPost } from "../types/IPost";
+import cl from "../styles/PostContainer.module.css";
 
 export const PostContainer = ()=>{
-     const {data:posts,error,isLoading} = postAPI.useFetchAllPostsQuery(5);
+     const {data:posts,error,isLoading} = postAPI.useFetchAllPostsQuery(10);
      const [createPost,{}]=postAPI.useCreatePostMutation();
      const [updatePost,{}]=postAPI.useUpdatePostMutation();
      const [deletePost,{}]=postAPI.useDeletePostMutation();
@@ -22,8 +23,9 @@ export const PostContainer = ()=>{
 
     return(
         <div>
-            <div className="post_list">
-                <button onClick={handleCreate}>Add new post</button>
+            <div className={cl.postList}>
+                <button className={cl.btnMain}
+                         onClick={handleCreate}>Add new post</button>
                 {isLoading && <h1>Loading..</h1>}
                 {error && <h1>Error</h1>}
                 {posts && posts.map(post=>
